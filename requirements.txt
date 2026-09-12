@@ -1,18 +1,19 @@
-# ── web framework ──────────────────────────────────────────────
+# ── Web Framework ──────────────────────────────────────────────
 flask>=3.0.0
 
-# ── ML / AI ────────────────────────────────────────────────────
+# ── Deep Learning & Diffusion Models (from Notebook) ───────────
 torch>=2.2.0
+torchao>=0.16.0
+peft>=0.17.0
 transformers>=4.40.0
 accelerate>=0.30.0
 diffusers>=0.28.0
 safetensors>=0.4.0
-peft>=0.11.0
 
-# ── audio processing ───────────────────────────────────────────
+# ── Audio Processing & Dependencies ───────────────────────────
 soundfile>=0.12.0
 librosa>=0.10.0
 
-# ── utilities ──────────────────────────────────────────────────
+# ── Utilities ──────────────────────────────────────────────────
 Pillow>=10.0.0
 numpy>=1.24.0
