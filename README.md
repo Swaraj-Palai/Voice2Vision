@@ -1,47 +1,38 @@
----
-title: Voice2Vision
-emoji: 🎙️
-colorFrom: indigo
-colorTo: teal
-sdk: gradio
-sdk_version: "4.44.0"
-app_file: hf_app.py
-pinned: false
-license: mit
-short_description: Speak a scene — watch it come alive
----
-
 # 🎙️ Voice2Vision
 
-**AI-powered voice-to-visual system** that converts spoken commands into images and animated videos.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Swaraj-Palai/Voice2Vision/blob/master/run_on_colab.ipynb)
 
-## How it works
+**AI-powered voice-to-visual system** that converts spoken commands into **Images** and **Animated Videos** using authentic deep-learning models.
 
-1. **Record** your voice or upload an audio file
-2. **Transcribe** — Whisper converts speech to text
-3. **Generate Image** — Pollinations.ai creates an image from your words
-4. **Generate Video** — An animated GIF is built from multiple generated frames
+---
 
-## Tech Stack
+## 🚀 Run 100% Free on Google Colab
 
-| Component | Technology |
-|-----------|-----------|
-| Speech-to-Text | OpenAI Whisper (base model) |
-| Image Generation | Pollinations.ai free API |
-| Animated Video | PIL GIF stitching from Pollinations frames |
-| UI | Gradio |
+Click the badge above or use this link:
+👉 **[Open in Google Colab](https://colab.research.google.com/github/Swaraj-Palai/Voice2Vision/blob/master/run_on_colab.ipynb)**
 
-## Run locally
+### Steps:
+1. **Enable GPU**: Click **Runtime** ➔ **Change runtime type** ➔ select **T4 GPU** ➔ **Save**.
+2. **Step 1**: Click Play (▶) to install MOSS and AI libraries (~30 seconds).
+3. **Step 2**: Click Play (▶) to load the models and launch the Gradio Web App.
+4. Open the generated **public web URL** (`https://xxxx.gradio.live`) to use the application!
 
-```bash
-git clone https://github.com/Swaraj-Palai/Voice2Vision.git
-cd Voice2Vision
-pip install -r requirements_hf.txt
-python hf_app.py
-```
+---
 
-## Original notebook
+## 🧠 AI Models & Architecture
 
-The original prototype (`voice to image and video model1.ipynb`) was built for
-Google Colab with a T4 GPU using Stable Diffusion + AnimateDiff.
-This deployment uses free cloud APIs so it runs on any machine — no GPU needed.
+| Component | Technology / Model |
+| :--- | :--- |
+| **Speech-to-Text** | `OpenMOSS-Team/MOSS-Transcribe-Diarize` (0.9B CausalLM) |
+| **Image Generation** | `dreamlike-art/dreamlike-diffusion-1.0` (Original Stable Diffusion, **No Watermark**) |
+| **Video Generation** | `AnimateDiffPipeline` with `AnimateLCM` + `emilianJR/epiCRealism` (Real 16-Frame AI Video) |
+| **Frontend UI** | Gradio Web App (`demo.launch(share=True)`) |
+
+---
+
+## 📁 Repository Structure
+
+* **`run_on_colab.ipynb`**: Ready-to-run Colab notebook with the 2-step setup and Gradio web interface.
+* **`voice to image and video model1.ipynb`**: The primary project notebook containing the complete authentic AI pipelines.
+* **`app.py`**: Standalone backend server configured for GPU hosting or local run with NVIDIA CUDA.
+* **`templates/` & `static/`**: Web frontend assets (HTML, CSS, JS).
